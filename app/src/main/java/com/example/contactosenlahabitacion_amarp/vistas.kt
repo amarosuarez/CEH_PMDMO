@@ -126,7 +126,7 @@ fun AddContacto(navController: NavController, coroutineScope: CoroutineScope) {
     var telefono by remember { mutableStateOf("") }
     var imagenSeleccionada by remember { mutableStateOf<String>("") }
 
-    // Lista de imágenes disponibles (puedes cambiar las URL o rutas de imagen)
+    // Lista de imágenes
     val imagenesDisponibles = listOf(
         R.drawable.man,
         R.drawable.women,
@@ -170,7 +170,7 @@ fun AddContacto(navController: NavController, coroutineScope: CoroutineScope) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Selector de imagen
+            // Seleccionar una imagen
             Text("Selecciona una imagen:")
 
 
