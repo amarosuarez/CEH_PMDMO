@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "6a7bbeaad3b566e0bf6fb49accadd161",
+    "entities": [
+      {
+        "tableName": "contactos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`telefono` TEXT NOT NULL, `nombre` TEXT NOT NULL, `apellido` TEXT NOT NULL, `foto` INTEGER NOT NULL, PRIMARY KEY(`telefono`))",
+        "fields": [
+          {
+            "fieldPath": "telefono",
+            "columnName": "telefono",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "apellido",
+            "columnName": "apellido",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foto",
+            "columnName": "foto",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "telefono"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6a7bbeaad3b566e0bf6fb49accadd161')"
+    ]
+  }
+}
