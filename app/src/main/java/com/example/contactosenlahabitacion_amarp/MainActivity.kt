@@ -59,6 +59,13 @@ class MainActivity : ComponentActivity() {
                     composable("addContacto") {
                         AddContacto(navController, coroutineScope)
                     }
+                    composable("editarContacto/{telefono}") { backStackEntry ->
+                        EditarContacto(
+                            backStackEntry.arguments?.getString("telefono") ?: "",
+                            coroutineScope,
+                            navController
+                        )
+                    }
                 }
             }
         }

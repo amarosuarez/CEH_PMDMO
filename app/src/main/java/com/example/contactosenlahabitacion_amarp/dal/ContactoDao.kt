@@ -14,6 +14,10 @@ interface ContactoDao {
     @Query("SELECT * FROM contactos")
     suspend fun getAll(): List<ContactoEntity>
 
+    // Obtiene un contacto por el teléfono
+    @Query("SELECT * FROM contactos WHERE telefono = :telefono")
+    suspend fun getContacto(telefono: String): ContactoEntity
+
     // Comprueba si un telefono ya está registrado
     @Query("SELECT COUNT(*) FROM contactos WHERE telefono = :telefono")
     suspend fun existsByTlfn(telefono: String): Boolean
